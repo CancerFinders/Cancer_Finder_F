@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import logo from 'assets/test_logo.png'
 
 export default function MarkdownHub () {
     return (
@@ -9,28 +10,28 @@ export default function MarkdownHub () {
 
             <nav className='md-hub_nav'>
                 <Link to='/markdown/chest' className='md-hub_link'>
-                    <img src="assets/chest_logo.png" alt="Nav logo" className="md-hub_linkImg" />
-                    <h3>Грудь</h3>
+                    <img src={logo} alt="Nav logo" className="md-hub_link_img" />
+                    <h3 className="md-hub_link_title">Грудь</h3>
                 </Link>
                 <Link to='/markdown/brain' className='md-hub_link'>
-                    <img src="assets/chest_logo.png" alt="Nav logo" className="md-hub_linkImg" />
-                    <h3>Мозг</h3>
+                    <img src={logo} alt="Nav logo" className="md-hub_link_img" />
+                    <h3 className="md-hub_link_title">Мозг</h3>
                 </Link>
                 <Link to='/markdown/foot' className='md-hub_link'>
-                    <img src="assets/chest_logo.png" alt="Nav logo" className="md-hub_linkImg" />
-                    <h3>Ступня</h3>
+                    <img src={logo} alt="Nav logo" className="md-hub_link_img" />
+                    <h3 className="md-hub_link_title">Ступня</h3>
                 </Link>
                 <Link to='/markdown/spine' className='md-hub_link'>
-                    <img src="assets/chest_logo.png" alt="Nav logo" className="md-hub_linkImg" />
-                    <h3>Позвоночник</h3>
+                    <img src={logo} alt="Nav logo" className="md-hub_link_img" />
+                    <h3 className="md-hub_link_title">Позвоночник</h3>
                 </Link>
                 <Link to='/markdown/pelvis' className='md-hub_link'>
-                    <img src="assets/chest_logo.png" alt="Nav logo" className="md-hub_linkImg" />
-                    <h3>Ягодицы</h3>
+                    <img src={logo} alt="Nav logo" className="md-hub_link_img" />
+                    <h3 className="md-hub_link_title">Ягодицы</h3>
                 </Link>
                 <Link to='/markdown/hand' className='md-hub_link'>
-                    <img src="assets/chest_logo.png" alt="Nav logo" className="md-hub_linkImg" />
-                    <h3>Рука</h3>
+                    <img src={logo} alt="Nav logo" className="md-hub_link_img" />
+                    <h3 className="md-hub_link_title">Рука</h3>
                 </Link>
             </nav>
         </div>

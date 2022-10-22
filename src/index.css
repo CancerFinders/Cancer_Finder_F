@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 
-body {
+body, a {
   margin: 0;
   
-  color: #FFF;
+  color: #00b82b;;
 
   background: #000;
 }
@@ -21,7 +21,6 @@ body {
   text-decoration: none;
 
   font-size: 24px;
-  color: #02E837;
 
   background: rgb(22, 22, 22);
   border-radius: 20px;
@@ -29,14 +28,15 @@ body {
   transition: 200ms ease-in;
 }
 
-.main-link:hover {
+a:hover {
   background: rgb(65, 65, 65);
 }
 
 .md-hub_title {
   text-align: center;
+  font-size: 48px;
 
-  margin-bottom: 30px;
+  margin: 10px 0 30px;
 }
 
 .md-hub_nav {
@@ -50,8 +50,134 @@ body {
 
 .md-hub_link {
   width: 420px;
-  height: 320px;
+  height: 260px;
+
+  padding: 10px;
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  text-decoration: none;
+
+  border-radius: 20px;
+  
+  transition: 200ms ease-in;
+}
+
+.md-hub_link_img {
+  object-fit: contain;
+}
+
+.md-hub_link_title {
+  font-size: 36px;
+}
+
+.md-serve {
+padding: 10px;
+}
+
+.md-serv_title {
+  margin-bottom: 20px;
+
+  font-size: 48px;
+  text-align: center;
+}
+
+.md-serv_container {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.md-serv_target {
+  width: calc(100% - 480px);
 
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  border: 3px solid #505050;
+  border-radius: 20px 0 0 20px;
+}
+
+.md-serv_target_img {
+  height: 640px;
+}
+
+.md-serv_markdown {
+  width: 480px;
+
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #505050;
+
+  border-radius: 0 20px 20px 0;
+}
+
+.md-serv_markdown > div {
+  width: 100%;
+
+}
+
+.md-serv_markdown h3 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 48px;
+}
+
+.md-serv_markdown textarea {
+  width: 100%;
+  padding: 10px;
+
+  font-size: 16px;
+
+  background: #808080;
+  border-radius: 10px;
+  
+  cursor: pointer;
+}
+
+.md-serv_markdown textarea::placeholder {
+  color: #383838;
+}
+
+.md-serv_markdown textarea:focus {
+  outline: 2px solid #00b82b;
+}
+
+.hasCancer_wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cancerType_textarea {
+  height: 80px;
+}
+
+.description_textarea {
+  height: 200px;
+}
+
+.submit_btn {
+  width: 100%;
+  height: 80px;
+
+  color: #00b82b;
+  font-size: 36px;
+
+  background-color: inherit;
+  border: 3px solid #141414;
+  border-radius: 20px;
+
+  cursor: pointer;
 }
