@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
-import target from 'assets/test_target.png'
-import { useState } from "react";
+// import target from 'assets/test_target.png'
+import { useState, useEffect} from "react";
+
+import Loader from "components/Loader";
+import MarkerCanvas from "components/MarkerCanvas";
 
 export default function MarkdownService() {
-    let {mdType} = useParams();
-
-    let termMatches = {
+    const {mdType} = useParams();
+    const termMatches = {
         "chest": "Грудь",
         "brain": "Мозг",
         "foot": "Ступня",
@@ -21,6 +23,28 @@ export default function MarkdownService() {
             description: "",    
         }
     )
+    const [currentTarget, setCurrentTarget] = useState()
+
+    useEffect(() => {
+    })
+
+    // Fetch target image function
+    async function fetchTarget(url:string) {
+        fetch(url)
+        .then(res => {
+            return res.json();
+        })
+        .then(res => setCurrentTarget(res))
+    }
+
+    // Getting target onload
+    useEffect(() => {
+        const loadNewTarget = async () => {
+            await fetchTarget("http://127.0.0.1:5000/img/chest")
+        };
+
+        loadNewTarget()
+    }, [])
 
     // Функция для перехвата события onChange для элементов формы
     // Сохраняет значения input-элементов в сторе formData
@@ -45,7 +69,8 @@ export default function MarkdownService() {
             <h1 className="md-serv_title">{termMatches[mdType as keyof typeof termMatches]}</h1>
             <div className="md-serv_container">
                 <div className="md-serv_target">
-                    <img src={target} alt="" className="md-serv_target_img" />
+                    {/* <img src={target} alt="" className="md-serv_target_img" /> */}
+                    {currentTarget ? <MarkerCanvas data={currentTarget} /> : <Loader/>}
                 </div>
                 <form onSubmit={sendMarkdown} className="md-serv_markdown">
                     <div className="form_hasCancer">
